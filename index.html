@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hədiyyə: facesdmc.az</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0066cc;
+      overflow: hidden;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      padding: 0 1rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    a.button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background: #fff;
+      color: #0066cc;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background: #e0e0e0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @media (max-width: 360px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 0.9rem; }
+      a.button { font-size: 0.9rem; padding: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+  <section class="hero">
+    <div class="container">
+      <h1>Əziz Qardaşım, Bu Sənin Hədiyyəndir!</h1>
+      <p>Bu sayt <strong>facesdmc.az</strong> tamamilə Sənə hədiyyə olunur. 🎁</p>
+      <a href="https://facesdmc.az" class="button">facesdmc.az</a>
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 facesdmc.az. Bütün hüquqlar qorunur.
+  </footer>
+  <!-- Confetti script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
+    window.onload = () => {
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          myConfetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        }, i * 500);
+      }
+    };
+  </script>
+</body>
+</html>
